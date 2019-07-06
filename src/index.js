@@ -2,7 +2,9 @@ module.exports = function check(str, bracketsConfig) {
     var stack = [];
     var last = '';
     var isRight = true;
-
+    if (str.length%2 != 0){
+        return false;
+    }
     [...str].some(bracket => {
         last = '';
         if (bracketsConfig.some(elem => elem[0] == elem[1] && elem[0] == bracket)) {
